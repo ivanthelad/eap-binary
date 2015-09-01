@@ -118,7 +118,7 @@ copy_artifacts "deployments"
 echo " Doing a simple copy  - Custom code for binary deployment"
 # Picks up WAR_FILE_URL from buildConfig
 echo STARTING PULL${BINARY_URL}
-curl --remote-name   -Lok  ${BINARY_URL}
+curl -L -o  ${DEPLOY_DIR}/ROOT.war   -O  ${BINARY_URL}
 
 if [ -d $LOCAL_SOURCE_DIR/configuration ]; then
   echo "Copying config files from project..."
